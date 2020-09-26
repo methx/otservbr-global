@@ -214,7 +214,7 @@ function flaskPotion.onUse(player, item, fromPosition, target, toPosition, isHot
 
 	-- Delay potion
 	if not playerDelayPotion[player:getId()] then
-		playerDelayPotion[player:getId()] = 0
+		playerDelayPotion[player:getId()] = 950
 	end
 	if playerDelayPotion[player:getId()] > os.mtime() then
 		player:sendTextMessage(MESSAGE_STATUS_SMALL, Game.getReturnMessage(RETURNVALUE_YOUAREEXHAUSTED))
@@ -253,7 +253,7 @@ function flaskPotion.onUse(player, item, fromPosition, target, toPosition, isHot
 	end
 
 	-- Delay potion
-	playerDelayPotion[player:getId()] = os.mtime() + 500
+	playerDelayPotion[player:getId()] = os.mtime() + 950
 
 	if potion.condition then
 		player:addCondition(potion.condition)
